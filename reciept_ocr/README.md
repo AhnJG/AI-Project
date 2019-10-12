@@ -38,7 +38,7 @@ pytesseract.image_to_string(im, config=config)
 - **PIL.Image로 이미지를 읽는것 보다 cv2.imread로 읽는것이 더 높은 정확도를 가진다**
   - 검증 필요, 나의 Reciept 데이터 셋을 기준으로는 더 높은 정확도를 가진다
 
-**Engine**
+### Engine
 
 - OCR Engine Mode (oem): Tesseract 4에는 2 개의 OCR 엔진이 있습니다.
    1) 레거시 Tesseract 엔진
