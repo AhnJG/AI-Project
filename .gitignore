@@ -1,6 +1,6 @@
 # Specific Folder
-/opencv_card_recognition/opencv/
-/opencv_card_recognition/OpenCV-Python-명함인식-Example(python3.5&opencv3.2)/
+/opencv_card_recognition/inflearn_opencv/
+/opencv_card_recognition/inflearn_OpenCV-Python-명함인식-Example(python3.5&opencv3.2)/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
