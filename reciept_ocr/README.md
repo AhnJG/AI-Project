@@ -114,5 +114,13 @@ activate py35
 
 [OpenCV (C++/Python)를 활용한 딥러닝 기반의 텍스트 탐지](https://blog.naver.com/PostView.nhn?blogId=tommybee&logNo=221650194118&parentCategoryNo=&categoryNo=157&viewDate=&isShowPopularPosts=true&from=search#)
 
+-  [EAST: An Efficient and Accurate Scene Text Detector](https://arxiv.org/abs/1704.03155v2) 기반 텍스트 탐지
 
+  
+
+---
+
+### Spell Check (문법 검사)
+
+[파이썬 한글 맞춤법 검사 라이브러리. (네이버 맞춤법 검사기 사용)](https://github.com/ssut/py-hanspell)
 
