@@ -1,10 +1,10 @@
 # Specific File
-.vscode
 .DS_Store
 
 # Specific Folder
 /opencv_card_recognition/inflearn_data/
 /opencv_card_recognition/inflearn_example(python3.5&opencv3.2)/
+/.vscode/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
