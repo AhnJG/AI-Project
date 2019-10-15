@@ -3,6 +3,8 @@
 ## CNN_Basic
 - Keras로 작성된 CNN 공부 코드
 
+## CNN_Kagle_Pneumonia
+
 ## Service Distribution
 
 - Aws Lambda를 이용하거나 다른 **Cloud 서비스를 이용**하여 배포할 수 있다
