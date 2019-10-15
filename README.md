@@ -1,6 +1,7 @@
 # AI-Project
 
-
+## CNN_Basic
+- Keras로 작성된 CNN 공부 코드
 
 ## Service Distribution
 
