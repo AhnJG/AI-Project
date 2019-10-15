@@ -1,8 +1,11 @@
-## Reciept OCR
+# Reciept OCR
 
 ---
 
-### Tesseract
+## Abstract
+영수증에 있는 가게명, 거래일, 구입 물품, 금액등의 정보를 가져올수 있는 OCR을 수행하고자 한다.
+
+## Tesseract
 
 [Tesseract 한국어 정리](https://blog.naver.com/PostView.nhn?blogId=tommybee&logNo=221307497468&parentCategoryNo=&categoryNo=54&viewDate=&isShowPopularPosts=true&from=search)
 
@@ -85,7 +88,7 @@ activate py35
 
 ---
 
-### Idea
+## Idea
 
 1. **이미지 전처리**
    1. GRAY_SCALE로 변경
@@ -111,7 +114,7 @@ activate py35
 
 ---
 
-### Text Detection
+## Text Detection
 
 [OpenCV (C++/Python)를 활용한 딥러닝 기반의 텍스트 탐지](https://blog.naver.com/PostView.nhn?blogId=tommybee&logNo=221650194118&parentCategoryNo=&categoryNo=157&viewDate=&isShowPopularPosts=true&from=search#)
 
@@ -121,6 +124,6 @@ activate py35
 
 ---
 
-### Spell Check (문법 검사)
+## Spell Check (문법 검사)
 
 [파이썬 한글 맞춤법 검사 라이브러리. (네이버 맞춤법 검사기 사용)](https://github.com/ssut/py-hanspell)
