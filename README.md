@@ -4,7 +4,7 @@
 - Keras로 작성된 CNN 공부 코드
 
 ## CNN_Kagle_Pneumonia
-- test
+- Chest-Xray 이미지를 이용한 폐렴 환자 Classification
 
 ## Service Distribution
 
