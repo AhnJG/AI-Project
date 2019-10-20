@@ -122,8 +122,6 @@ activate py35
 -  [EAST: An Efficient and Accurate Scene Text Detector](https://arxiv.org/abs/1704.03155v2) 기반 텍스트 탐지
 
   
-  
-  
 
 ---
 
@@ -150,3 +148,10 @@ Flag
 - cv2.IMREAD_COLOR: 사진을 유색으로 읽을 수 있는데, 투명도가 다 무시되어요. cv2.imread()의 기본값은 이거예요. 1로도 대체할 수 있어요.
 
 - cv2.IMREAD_UNCHANGED: 사진을 있는 그대로 읽어요. BGR 채널뿐만 아니라 투명도 채널까지 읽혀요. -1로도 대체할 수 있어요.
+
+---
+
+## Result
+
+- 배경이 어두운색(검은색) 일수록 이미지 전처리(edge, findContours, Perspective Transform)에서 높은 정확도를 가진다
+- 
