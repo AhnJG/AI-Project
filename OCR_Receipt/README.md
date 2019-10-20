@@ -122,9 +122,31 @@ activate py35
 -  [EAST: An Efficient and Accurate Scene Text Detector](https://arxiv.org/abs/1704.03155v2) 기반 텍스트 탐지
 
   
+  
+  
+
+---
+
+## Image Preprocessing
+
+[Improve Accuracy of OCR using Image Preprocessing](https://medium.com/cashify-engineering/improve-accuracy-of-ocr-using-image-preprocessing-8df29ec3a033)
 
 ---
 
 ## Spell Check (문법 검사)
 
 [파이썬 한글 맞춤법 검사 라이브러리. (네이버 맞춤법 검사기 사용)](https://github.com/ssut/py-hanspell)
+
+---
+
+### OpenCV
+
+#### cv2.Imread 
+
+Flag
+
+- cv2.IRMEAD_GRAYSCALE: 우리가 방금 한 거예요. 사진을 흑백으로 읽어요. 0으로도 대체할 수 있어요.
+
+- cv2.IMREAD_COLOR: 사진을 유색으로 읽을 수 있는데, 투명도가 다 무시되어요. cv2.imread()의 기본값은 이거예요. 1로도 대체할 수 있어요.
+
+- cv2.IMREAD_UNCHANGED: 사진을 있는 그대로 읽어요. BGR 채널뿐만 아니라 투명도 채널까지 읽혀요. -1로도 대체할 수 있어요.
