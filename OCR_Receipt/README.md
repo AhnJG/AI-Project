@@ -151,6 +151,25 @@ Flag
 
 ---
 
+### PIL
+
+#### Image
+
+```python
+# use nearest neighbour
+im2 = im1.resize((width, height), Image.NEAREST)      
+# linear interpolation in a 2x2 environment
+im3 = im1.resize((width, height), Image.BILINEAR)
+# cubic spline interpolation in a 4x4 environment
+im4 = im1.resize((width, height), Image.BICUBIC)      
+## best down-sizing filter
+im5 = im1.resize((width, height), Image.ANTIALIAS)    
+```
+
+
+
+---
+
 ## Result
 
 - 배경이 어두운색(검은색) 일수록 이미지 전처리(edge, findContours, Perspective Transform)에서 높은 정확도를 가진다
