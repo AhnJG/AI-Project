@@ -5,10 +5,6 @@
 ## Abstract
 영수증에 있는 가게명, 거래일, 구입 물품, 금액등의 정보를 가져올수 있는 OCR을 수행하고자 한다.
 
-### conda
-
-activate py35
-
 ---
 
 ## Idea
@@ -33,8 +29,11 @@ activate py35
    5. 라인별로 맞춤법 검사를 수행하여 가장 오류가 적은 라인을 선정
 6. **좋은 이미지를 만들도록 사용자 행동을 유도한다**
    1. 입력 이미지가 OCR의 결과에 많은 영향을 준다, 따라서 좋은 입력을 만들수 있다면 가장 편하게 좋은 결과를 얻을수 있다
+   2. **검은색 배경에서 찍도록 한다**
+   3. 영수증에 **그림자가 없도록 한다**
 7. 예측 실패 데이터를 넣어 추가적인 학습을 시킬수는 없을까?
-8. Receipt OCR을 수행하기 전에 해당 이미지가 Receipt가 맞는지 확인을 해야한다. 아니라면 사용자가 손으로 쓴 글씨도 똑같이 영수증 OCR을 수행하게 된다
+8. **Receipt OCR을 수행하기 전에 해당 이미지가 Receipt가 맞는지 확인을 해야한다.** 아니라면 사용자가 손으로 쓴 글씨도 똑같이 영수증 OCR을 수행하게 된다
+9. 이미지 전처리를 수행하면 이미지가 90도 회전될 때가 있다, 따라서  **원본 이미지와 90도 회전된 이미지에 대하여 OCR을 수행한다**
 
 ---
 
@@ -60,40 +59,8 @@ activate py35
 
 ---
 
-### OpenCV
-
-#### cv2.Imread 
-
-Flag
-
-- cv2.IRMEAD_GRAYSCALE: 우리가 방금 한 거예요. 사진을 흑백으로 읽어요. 0으로도 대체할 수 있어요.
-
-- cv2.IMREAD_COLOR: 사진을 유색으로 읽을 수 있는데, 투명도가 다 무시되어요. cv2.imread()의 기본값은 이거예요. 1로도 대체할 수 있어요.
-
-- cv2.IMREAD_UNCHANGED: 사진을 있는 그대로 읽어요. BGR 채널뿐만 아니라 투명도 채널까지 읽혀요. -1로도 대체할 수 있어요.
-
----
-
-### PIL
-
-#### Image
-
-```python
-# use nearest neighbour
-im2 = im1.resize((width, height), Image.NEAREST)      
-# linear interpolation in a 2x2 environment
-im3 = im1.resize((width, height), Image.BILINEAR)
-# cubic spline interpolation in a 4x4 environment
-im4 = im1.resize((width, height), Image.BICUBIC)      
-## best down-sizing filter
-im5 = im1.resize((width, height), Image.ANTIALIAS)    
-```
-
-
-
----
-
 ## Result
 
 - 배경이 어두운색(검은색) 일수록 이미지 전처리(edge, findContours, Perspective Transform)에서 높은 정확도를 가진다
-- 
+- 객체와 배경의 색 차이가 커야한다.
+- 배경이 어두운색일때 객체에 그림자가 생기면 이미지가 전처리 과정에서 같이 날라간다
