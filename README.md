@@ -6,6 +6,35 @@
 ## CNN_Kagle_Pneumonia
 - Chest-Xray 이미지를 이용한 폐렴 환자 Classification
 
+## Extract Image from Video
+
+- 영상에서 Frame 단위로 Image를 추출한다
+
+## FeatureMatching_Image
+
+- 이미지의 특징점 매치
+
+## OCR_Receipt
+
+- 영수증 OCR (Detect, Recognition)
+
+## Perceptron_Xor
+
+- Python 으로 작성한 perceptron xor
+
+## Recognition_BesinessCard
+
+- 명함 인식
+
+## RNN_Nabiya
+
+- RNN 기초 공부
+- 나비야 악보 예측
+
+## Similarity_Image
+
+- 이미지 유사도 측정
+
 ## Service Distribution
 
 - Aws Lambda를 이용하거나 다른 **Cloud 서비스를 이용**하여 배포할 수 있다
