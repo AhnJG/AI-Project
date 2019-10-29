@@ -62,6 +62,16 @@
 
 ---
 
+## Process
+
+1. Convert Color to GRAY
+2. Edge Detection(Canny)
+3. Blur(Gaussian)
+4. Image Binarization - Threshold(Adaptive)
+5. 
+
+---
+
 ## Result
 
 - 배경이 어두운색(검은색) 일수록 이미지 전처리(edge, findContours, Perspective Transform)에서 높은 정확도를 가진다

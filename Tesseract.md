@@ -77,3 +77,15 @@ TesseractNotFoundError: tesseract is not installed or it's not in your path
 
 ---
 
+### Tesseract Training
+
+#### jTessBoxEditor
+
+- Note: LSTM Training for Tesseract 4.0x is not supported. (Ref. jTessBoxEditor/Readme)
+
+#### [TrainingTesseract 4.00](https://github.com/tesseract-ocr/tesseract/wiki/TrainingTesseract-4.00)
+
+####[tesstrain](https://github.com/tesseract-ocr/tesstrain)
+
+- Train Tesseract LSTM with make
+- 
