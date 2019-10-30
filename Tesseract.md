@@ -88,4 +88,7 @@ TesseractNotFoundError: tesseract is not installed or it's not in your path
 ####[tesstrain](https://github.com/tesseract-ocr/tesstrain)
 
 - Train Tesseract LSTM with make
-- 
+- Temp 폴더의 tesstrain-master, cord-testset 확인 해보기
+
+[Training Tesseract 4 models from real images](https://www.endpoint.com/blog/2018/07/09/training-tesseract-models-from-scratch)
+
