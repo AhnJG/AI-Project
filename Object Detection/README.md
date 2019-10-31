@@ -2,7 +2,7 @@
 
 ## bikerider-detector-master
 
-## ObjectDetection-YOLO
+## YOLO
 
 - Deep Learning based Object Detection using YOLOv3 with OpenCV ( Python / C++ )
 
@@ -19,3 +19,7 @@
   python3 object_detection_yolo.py --image=bird.jpg
   ```
 
+- ### Class
+
+  - Person
+  - motorbike(atv)
