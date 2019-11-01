@@ -2,7 +2,7 @@
 
 ## bikerider-detector-master
 
-## YOLO
+## YOLO-V3
 
 - Deep Learning based Object Detection using YOLOv3 with OpenCV ( Python / C++ )
 
@@ -26,7 +26,9 @@
   - Person
   - motorbike(atv)
 
-## YOLO-Training
+## YOLO-V3-Train
+
+- https://github.com/ultralytics/yolov3
 
 - 만약 out of memory 에러가 뜨며 학습이 되지 않을 경우 batch와 subdivisions를 변경합니다.
 
@@ -34,5 +36,26 @@
 
   (batch는 클 수록, subdivisions는 작을 수록 정확도가 높아지지만 학습이 느리고 그래픽 메모리가 많이 필요합니다)
 
+  ```bash
+  # Default Setting
+  pip install -U setuptools
+  pip install -U -r requirements.txt
   
+   # copy COCO2014 dataset (20GB)
+  bash data/get_coco_dataset_gdrive.sh 
+  
+  # CUSTOM TRAINING EXAMPLE
+  python3 train.py --data data/coco_16img.data --batch-size 16 --accumulate 1 --nosave --name coco_16img  
+  python3 train.py --data data/coco_64img.data --batch-size 16 --accumulate 1 --nosave --name coco_64img
+  
+  # plot as 'results.png'
+  python3 -c "from utils import utils; utils.plot_results()"  
+  
+  # Evaluate Trained Model, 이미지를 data/samples폴더에 복사하고 다음을 실행
+  python3 detect.py --weights weights/best.pt
+  ```
+
+- ### yolov3 pytorch weights
+
+  - download from Google Drive: https://drive.google.com/drive/folders/1uxgUBemJVw9wZsdpboYbzUN4bcRhsuAI
 

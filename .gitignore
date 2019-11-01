@@ -1,5 +1,11 @@
+# Data
+/Object_Detection/coco/
+/Object_Detection/YOLO-V3-Train/weights/
+
 # deep learning model weight
 yolov3.weights
+*.weights
+*.cfg
 
 # Specific File
 .DS_Store
