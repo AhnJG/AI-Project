@@ -2,8 +2,7 @@
 All file name change what you want format in input folder
 Usage:
     python change_file_name.py --folder= --format=
-From:
-    https://118k.tistory.com/303
+    python change_file_name.py --folder="./Object Detection/images/test2" --format="test"
 """
 
 import argparse
