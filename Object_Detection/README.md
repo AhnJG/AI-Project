@@ -122,7 +122,7 @@
 
      - classes =1 Detection하고 싶은 물체의 개수
 
-     - filters = (classes+5)*3 으로 입력 (line 127,171)
+     - filters = (classes+5)*3 으로 입력 (filters의 값이 255로 되어있는 것들을 바꾸면 된다)
 
      - max_batches = 4000 * 클래스 갯수
      - 저자에 의하면 class당 2,000 iteration을 권하고 있습니다.
@@ -131,6 +131,7 @@
 
      ```bash
      python train.py --cfg="coco/yolov3-tiny.cfg" --data="coco/atv_rider_obj_2.data" --weight="weights/yolov3-tiny.conv.15"
+     ./darknet detector train ../YOLO-V3-Train/coco/atv_rider_obj_2.data ../YOLO-V3-Train/coco/yolov3.cfg ../YOLO-V3-Train/weights/darknet53.conv.74
      ```
 
      - YOLOv3-tiny : weight=yolov3-tiny.conv.15, cfg=yolov3-tiny-obj.cfg
@@ -169,6 +170,9 @@
   
   # file_path_write
   python file_path_write.py --folder="coco/images/val"
+  
+  # Delete No Labeling Image
+  python delete_no_label_file.py --folder="./coco/images/train/"
   
   # Train
   python train.py --cfg="coco/yolov3-tiny.cfg" --data="coco/atv_rider_obj_1.data" --weight="weights/darknet53.conv.74"

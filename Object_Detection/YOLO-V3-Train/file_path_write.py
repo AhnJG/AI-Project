@@ -7,6 +7,9 @@ import os
 import sys
    
 def file_write(path):
+    abs_dir = os.path.dirname(os.path.abspath(__file__))
+    path_join = os.path.join(abs_dir, path)
+
     files = os.listdir(path)
     file_list = []
     # File Filter (hide file, .txt file)
@@ -16,7 +19,7 @@ def file_write(path):
         if _file[0] == "." or ext == "txt":
             files.remove(_file)
         else:
-            file_list.append('/Users/ahn/Documents/AI-Project/Object_detection/YOLO-V3-Train/coco/images/val/' + _file)
+            file_list.append(os.path.join(path_join, _file))
 
 
     # Get abspath all files in folder_path

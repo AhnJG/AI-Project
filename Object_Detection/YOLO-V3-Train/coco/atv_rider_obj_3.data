@@ -1,0 +1,5 @@
+classes=1
+train=/Users/ahn/Documents/AI-Project/Object_detection/YOLO-V3-Train/coco/images/train/atv_rider_train_3.txt
+valid=/Users/ahn/Documents/AI-Project/Object_detection/YOLO-V3-Train/coco/images/val/atv_rider_val_3.txt
+names=/Users/ahn/Documents/AI-Project/Object_detection/YOLO-V3-Train/coco/atv_1.names
+backup=backup/

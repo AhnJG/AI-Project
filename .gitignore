@@ -1,6 +1,7 @@
 # Data
 /Object_Detection/coco/
 /Object_Detection/YOLO-V3-Train/weights/
+/Object_Detection/darknet/
 *.jpg
 *.gif
 *.jpeg
