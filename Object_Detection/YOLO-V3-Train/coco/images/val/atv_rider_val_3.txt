@@ -60,7 +60,6 @@
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/val/atv_rider1431.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/val/atv_rider1419.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/val/atv_rider1627.jpg
-/Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/val/atv_rider1640.gif
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/val/atv_rider1372.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/val/atv_rider1414.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/val/atv_rider1574.jpg

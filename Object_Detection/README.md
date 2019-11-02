@@ -25,17 +25,21 @@
 
 ## YOLO-V3-Train
 
-- https://github.com/ultralytics/yolov3
+- **Awesome (Labeling, Things)https://go-programming.tistory.com/160?category=768204**
 
-- https://pjreddie.com/darknet/yolo/
+- (Darknet-kr)https://zeuseyera.github.io/darknet-kr/SaYongBeob_Yolo-v3.html
 
-- https://zeuseyera.github.io/darknet-kr/SaYongBeob_Yolo-v3.html
+- **(YOLO v3 훈련 중 출력 매개 변수 의미)http://www.programmersought.com/article/9858453147/**
 
-- https://eungbean.github.io/2018/11/07/yolo-for-realtime-food-recognition/
+- **(Awesome Example)https://eungbean.github.io/2018/11/07/yolo-for-realtime-food-recognition/**
 
-- https://yeonsuuu-uuu.tistory.com/2
+- (LearnOpenCV Ex)https://github.com/spmallick/learnopencv/tree/master/YOLOv3-Training-Snowman-Detector
 
-- Paper : https://pjreddie.com/media/files/papers/YOLOv3.pdf
+- (2Class Ex)https://yeonsuuu-uuu.tistory.com/2
+
+- (Split Train and Test)https://github.com/spmallick/learnopencv/blob/master/YOLOv3-Training-Snowman-Detector/splitTrainAndTest.py
+
+- YOLO Paper : https://pjreddie.com/media/files/papers/YOLOv3.pdf
 
 - mAP : Yolo spp > yolo > yolo-tiny (CoCo Data Set Test)
 
@@ -47,9 +51,25 @@
 
   - 320, 416, 608은 입력 이미지 사이즈이다
 
-- ### Train Process
+---
 
-  1. obj.data 파일 만들기
+- ### Train Process-DarkNet
+
+  - **DarkNet 학습 : https://pjreddie.com/darknet/yolo/** - 사용하기 더 편함
+  - gif 이미지는 없는것이 좋다
+  - 검출하지 않으려는 객체들의 사진도 필요합니다. (이 사진들은 빈 txt 파일을 가져야 합니다.)
+  - 클래스당 2000개 이상의 이미지가 필요합니다.
+  - 이미지 속 객체들의 **크기, 밝기, 위치, 회전, 배경**이 다양할 수록 정확도가 높아집니다.
+
+  1. 기본 세팅
+
+     ```bash
+     git clone https://github.com/pjreddie/darknet
+     cd darknet
+     make
+     ```
+
+  2. obj.data 파일 만들기
 
      ```data
      classes= 2
@@ -59,7 +79,7 @@
      backup = backup/
      ```
 
-  2. obj.names 파일 만들기 
+  3. obj.names 파일 만들기 
 
      - Detect 하고 싶은 물체를 차례대로 입력한다
      - person부터 차례대로 0~의 값을 가진다(person:0, bicycle:1)
@@ -72,12 +92,15 @@
      airplane
      ```
 
-  3. 학습시킬 이미지와 라벨링된 파일을 같은 폴더안에 넣어준다
+  4. 학습시킬 이미지와 라벨링된 파일은 구분지어 넣어준다
 
      ```txt
+     /data/images/train
      atv_rider0000.jpg
-     atv_rider0000.txt
      atv_rider0001.jpg
+     
+     /data/label/train
+     atv_rider0000.txt
      atv_rider0001.txt
      ```
 
@@ -87,7 +110,7 @@
        0 0.270909 0.742727 0.287273 0.416364
        ```
 
-  4. obj.data의 train과 valid에 설정된 경로에 train.txt와 valid.txt를 만든다
+  5. obj.data의 train과 valid에 설정된 경로에 train.txt와 valid.txt를 만든다
 
      - 학습시킬 이미지들의 경로를 지정해주면 된다
 
@@ -100,14 +123,14 @@
      YOLO-V3-Train/coco/images/train/atv_rider0990.jpg
      ```
 
-  5. Pre-Trained된 Convolutional Layers를 다운받는다
+  6. Pre-Trained된 Convolutional Layers를 다운받는다
 
      - wget https://pjreddie.com/media/files/darknet53.conv.74
      - https://drive.google.com/drive/folders/1uxgUBemJVw9wZsdpboYbzUN4bcRhsuAI
      - Darknet `*.weights` format: https://pjreddie.com/media/files/yolov3.weights
      - PyTorch `*.pt` format: https://drive.google.com/drive/folders/1uxgUBemJVw9wZsdpboYbzUN4bcRhsuAI
 
-  6. Cfg 파일 수정
+  7. Cfg 파일 수정
 
      - batch=64
 
@@ -127,33 +150,39 @@
      - max_batches = 4000 * 클래스 갯수
      - 저자에 의하면 class당 2,000 iteration을 권하고 있습니다.
 
-  7. 학습 시작
+  8. 학습 시작
 
      ```bash
-     python train.py --cfg="coco/yolov3-tiny.cfg" --data="coco/atv_rider_obj_2.data" --weight="weights/yolov3-tiny.conv.15"
-     ./darknet detector train ../YOLO-V3-Train/coco/atv_rider_obj_2.data ../YOLO-V3-Train/coco/yolov3.cfg ../YOLO-V3-Train/weights/darknet53.conv.74
+     # Darknet
+     ./darknet detector train ../YOLO-V3-Train/coco/atv_rider_obj_3.data ../YOLO-V3-Train/coco/yolov3.cfg ../YOLO-V3-Train/weights/darknet53.conv.74
      ```
 
      - YOLOv3-tiny : weight=yolov3-tiny.conv.15, cfg=yolov3-tiny-obj.cfg
      - YOLOv3 : weight=darknet53.conv.74, cfg=yolo-obj.cfg
      - YOLOv3-SPP : weight=yolov3-spp.weights, cfg=yolov3-spp.cfg
 
-  8. 탐지하기(결과 확인)
+  9. 탐지하기(결과 확인)
 
      ```bash
-     python detect.py --cfg="cfg/yolov3-tiny.cfg" --weights="weights/yolov3-tiny.weights"
+     # Darknet
+     ./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg
+     ./darknet detector test cfg/coco.data cfg/yolov3.cfg yolov3.weights data/dog.jpg
      ```
 
      - https://github.com/ultralytics/yolov3#inference
      - 대상 폴더나 이미지를 지정하지 않으면 ./data/sample/ 에 있는 모든 이미지를 대상으로 수행하고 ./output/  에 모든 결과를 저장한다
 
-  9. 학습 그래프 확인하기
+  10. 학습 그래프 확인하기
 
-     ```bash
-     
-     ```
+      ```bash
+      
+      ```
 
-     
+  ---
+
+  ### Train-Process-Ultralytics
+
+  - https://github.com/ultralytics/yolov3 - 뭔가.. 학습이 제대로 안된다
 
   ```bash
   # Default Setting
@@ -175,8 +204,6 @@
   python delete_no_label_file.py --folder="./coco/images/train/"
   
   # Train
-  python train.py --cfg="coco/yolov3-tiny.cfg" --data="coco/atv_rider_obj_1.data" --weight="weights/darknet53.conv.74"
-  python train.py --cfg="coco/yolov3-tiny.cfg" --data="coco/atv_rider_obj_2.data" --weight="weights/yolov3-tiny.weights"
   python train.py --cfg="coco/yolov3-tiny.cfg" --data="coco/atv_rider_obj_2.data" --weight="weights/yolov3-tiny.conv.15"
   
   # Detect
@@ -209,3 +236,5 @@
   - **Evaluation of the current network on the validation set**
   - mAP : 0
   - F1 : 0
+
+---

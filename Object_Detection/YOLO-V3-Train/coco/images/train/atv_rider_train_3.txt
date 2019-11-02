@@ -27,7 +27,6 @@
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider1133.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0239.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider1127.jpg
-/Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0279.gif
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0039.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider1327.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0763.jpg
@@ -59,7 +58,6 @@
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider1124.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0548.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0202.jpg
-/Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0081.gif
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0014.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0000.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0996.jpg
@@ -193,7 +191,6 @@
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0505.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0263.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider1170.jpg
-/Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0748.gif
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0534.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0050.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0905.jpg
@@ -378,7 +375,6 @@
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0746.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0587.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider1100.jpg
-/Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0712.gif
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0234.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0208.jpg
 /Users/ahn/Documents/AI-Project/Object_Detection/YOLO-V3-Train/coco/images/train/atv_rider0591.jpg
