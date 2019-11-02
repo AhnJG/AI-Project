@@ -16,7 +16,7 @@ def file_write(path):
         if _file[0] == "." or ext == "txt":
             files.remove(_file)
         else:
-            file_list.append('/Users/ahn/Documents/AI-Project/Object_detection/YOLO-V3-Train/coco/images/train/' + _file)
+            file_list.append('/Users/ahn/Documents/AI-Project/Object_detection/YOLO-V3-Train/coco/images/val/' + _file)
 
 
     # Get abspath all files in folder_path
