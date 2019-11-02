@@ -8,23 +8,25 @@ import sys
    
 def file_write(path):
     files = os.listdir(path)
-    
+    file_list = []
     # File Filter (hide file, .txt file)
     for _file in files:
         name, ext = _file.split('.')
 
-        if _file[0] == '.':
+        if _file[0] == "." or ext == "txt":
             files.remove(_file)
-        elif ext == 'txt':        
-            files.remove(_file)
-            print(_file)
+        else:
+            file_list.append('/Users/ahn/Documents/AI-Project/Object_detection/YOLO-V3-Train/coco/images/train/' + _file)
+
 
     # Get abspath all files in folder_path
-    files = [os.path.abspath(_file) for _file in files]
+    # files = [os.path.abspath(_file) + 'Object_detection/YOLO-V3-Train/coco/images/train/' for _file in files]
 
     with open(path+"write_file.txt", "w") as f:
-        for line in files:
+        for line in file_list:
             f.write(line + "\n")
+    
+    print(path+"write_file.txt")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

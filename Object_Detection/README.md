@@ -30,11 +30,7 @@
 
 - https://github.com/ultralytics/yolov3
 
-- 만약 out of memory 에러가 뜨며 학습이 되지 않을 경우 batch와 subdivisions를 변경합니다.
-
-  Batch는 4의 배수로, subdivisions는 2의 배수로 맞춰줍니다.
-
-  (batch는 클 수록, subdivisions는 작을 수록 정확도가 높아지지만 학습이 느리고 그래픽 메모리가 많이 필요합니다)
+- 저자에 의하면 class당 2,000 iteration을 권하고 있습니다.
 
   ```bash
   # Default Setting
@@ -58,4 +54,23 @@
 - ### yolov3 pytorch weights
 
   - download from Google Drive: https://drive.google.com/drive/folders/1uxgUBemJVw9wZsdpboYbzUN4bcRhsuAI
+
+- ### .cfg file setting
+
+  - batch=64
+
+    - 만약 out of memory 에러가 뜨며 학습이 되지 않을 경우 batch와 subdivisions를 변경합니다.
+
+      Batch는 4의 배수로, subdivisions는 2의 배수로 맞춰줍니다.
+
+      (batch는 클 수록, subdivisions는 작을 수록 정확도가 높아지지만 학습이 느리고 그래픽 메모리가 많이 필요합니다)
+
+  - subdivisions=8
+    - subdivision을 8로 수정합니다. 이 뜻은 batch를 8개로 나누어 GPU 메모리 부하를 줄이겠다는 의도입니다.
+
+  - classes =? Detection하고 싶은 물체의 개수
+
+  - filters = (classes+5)*3 으로 입력 (line 127,171)
+
+  - max_batches = 4000 * 클래스 갯수
 
