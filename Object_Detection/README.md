@@ -21,11 +21,6 @@
   python3 object_detection_yolo.py --image=bird.jpg
   ```
 
-- ### Class
-
-  - Person
-  - motorbike(atv)
-
 ## YOLO-V3-Train
 
 - https://github.com/ultralytics/yolov3
@@ -40,16 +35,21 @@
    # copy COCO2014 dataset (20GB)
   bash data/get_coco_dataset_gdrive.sh 
   
-  # CUSTOM TRAINING EXAMPLE
-  python3 train.py --data data/coco_16img.data --batch-size 16 --accumulate 1 --nosave --name coco_16img  
-  python3 train.py --data data/coco_64img.data --batch-size 16 --accumulate 1 --nosave --name coco_64img
-  
-  # plot as 'results.png'
-  python3 -c "from utils import utils; utils.plot_results()"  
-  
-  # Evaluate Trained Model, 이미지를 data/samples폴더에 복사하고 다음을 실행
-  python3 detect.py --weights weights/best.pt
   ```
+
+  ```bash
+  # change_file_name
+  python change_file_name.py --folder="coco/images/val" --format="atv_rider"
+  
+  # Train
+  python train.py --cfg="coco/yolov3-tiny.cfg" --data="coco/atv_rider_obj_1.data" --weight="weights/darknet53.conv.74"
+  
+  # Detect
+  python detect.py --cfg="coco/yolov3-tiny.cfg" --data="coco/atv_rider_obj_1.data" --weight="weights/last.pt"  
+  python detect.py --cfg cfg/yolov3-tiny.cfg --weights weights/yolov3-tiny.weights
+  ```
+
+  
 
 - ### yolov3 pytorch weights
 
