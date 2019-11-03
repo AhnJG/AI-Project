@@ -4,6 +4,14 @@
 
 ## YOLO-V3
 
+### About
+
+- (YOLO V3)http://www.programmersought.com/article/2477186478/
+- (YOLO v3 algorithm notes)http://www.programmersought.com/article/7888200386/
+- (Learning and understanding: YOLO v1, v2, v3) http://www.programmersought.com/article/93361001378/
+- (Yolo v3 parameter understanding)http://www.programmersought.com/article/1162490678/
+- (YOLO-v3 model parameter anchor setting)http://www.programmersought.com/article/709620450/
+
 - Deep Learning based Object Detection using YOLOv3 with OpenCV ( Python / C++ )
 
 - https://www.learnopencv.com/deep-learning-based-object-detection-using-yolov3-with-opencv-python-c/
@@ -33,11 +41,15 @@
 
 - **(Awesome Example)https://eungbean.github.io/2018/11/07/yolo-for-realtime-food-recognition/**
 
+- **(DartNet 구조)https://dhhwang89.tistory.com/103?category=733930**
+
 - (LearnOpenCV Ex)https://github.com/spmallick/learnopencv/tree/master/YOLOv3-Training-Snowman-Detector
 
 - (2Class Ex)https://yeonsuuu-uuu.tistory.com/2
 
 - (Split Train and Test)https://github.com/spmallick/learnopencv/blob/master/YOLOv3-Training-Snowman-Detector/splitTrainAndTest.py
+
+- **(Colab에서 Darknet 학습하기)http://blog.ibanyez.info/blogs/coding/20190410-run-a-google-colab-notebook-to-train-yolov3-using-darknet-in/**
 
 - YOLO Paper : https://pjreddie.com/media/files/papers/YOLOv3.pdf
 
@@ -60,6 +72,7 @@
   - 검출하지 않으려는 객체들의 사진도 필요합니다. (이 사진들은 빈 txt 파일을 가져야 합니다.)
   - 클래스당 2000개 이상의 이미지가 필요합니다.
   - 이미지 속 객체들의 **크기, 밝기, 위치, 회전, 배경**이 다양할 수록 정확도가 높아집니다.
+    - DarkNet에 기본적으로 Data Augmentation이 적용되어 있는것 같다
 
   1. 기본 세팅
 
@@ -154,7 +167,9 @@
 
      ```bash
      # Darknet
-     ./darknet detector train ../YOLO-V3-Train/coco/atv_rider_obj_3.data ../YOLO-V3-Train/coco/yolov3.cfg ../YOLO-V3-Train/weights/darknet53.conv.74
+     ./darknet detector train coco/atv_rider_obj_4.data coco/yolov3_2.cfg weights/darknet53.conv.74
+     ./darknet detector train coco/atv_rider_obj_4.data coco/yolov3_2.cfg weights/darknet53.conv.74 -gpus 0,1
+     ./darknet detector train coco/atv_rider_obj_4.data coco/yolov3_2.cfg weights/darknet53.conv.74 -gpus 0,1,2,3
      ```
 
      - YOLOv3-tiny : weight=yolov3-tiny.conv.15, cfg=yolov3-tiny-obj.cfg
