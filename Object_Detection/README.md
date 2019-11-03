@@ -35,6 +35,8 @@
 
 - **Awesome (Labeling, Things)https://go-programming.tistory.com/160?category=768204**
 
+- **Awesome Train https://eehoeskrap.tistory.com/370**
+
 - (Darknet-kr)https://zeuseyera.github.io/darknet-kr/SaYongBeob_Yolo-v3.html
 
 - **(YOLO v3 훈련 중 출력 매개 변수 의미)http://www.programmersought.com/article/9858453147/**
@@ -67,8 +69,15 @@
 
 - ### Train Process-DarkNet
 
-  - **DarkNet 학습 : https://pjreddie.com/darknet/yolo/** - 사용하기 더 편함
-  - gif 이미지는 없는것이 좋다
+  - **Joheph DarkNet 학습 : https://pjreddie.com/darknet/yolo/** 
+  - **AlexeyAB's Darknet : https://github.com/AlexeyAB/darknet/**
+  - DarkNet은 linux와 window환경에서 yolo를 쉽게 test하고 train 할 수 있는 오픈소스이다
+  - DarkNet은 [Joseph Redmon](https://twitter.com/pjreddie)이 작성을 하였는데 종종 [AlexeyAB's Darknet repo](https://github.com/AlexeyAB/darknet/)도 사용된다
+  - Alexey Darknet은 Redmon의 Darknet에서 Forked된 것으로 작은 변화들이 있다
+    - Alexey : 학습중 출력되는 log의 수가 적다(세대가 지날때마다 log를 출력)
+  - YOLOv3의 학습 속도가 YOLOv3-tiny보다 10배 정도 더 많이 걸린다
+  - 학습 환경이 좋지 않다면 Colab에서 학습하는 것이 좋다(mac book pro i5 8세대 + 16gb ram 기준 100배 빠르다)
+  - gif 이미지는 없는것이 좋다 (없어야 되는것 같다)
   - 검출하지 않으려는 객체들의 사진도 필요합니다. (이 사진들은 빈 txt 파일을 가져야 합니다.)
   - 클래스당 2000개 이상의 이미지가 필요합니다.
   - 이미지 속 객체들의 **크기, 밝기, 위치, 회전, 배경**이 다양할 수록 정확도가 높아집니다.
@@ -168,6 +177,8 @@
      ```bash
      # Darknet
      ./darknet detector train coco/atv_rider_obj_4.data coco/yolov3_2.cfg weights/darknet53.conv.74
+     ./darknet detector train coco/atv_rider_obj_4.data coco/yolov3-tiny.cfg
+     weights/yolov3-tiny.conv.15
      ./darknet detector train coco/atv_rider_obj_4.data coco/yolov3_2.cfg weights/darknet53.conv.74 -gpus 0,1
      ./darknet detector train coco/atv_rider_obj_4.data coco/yolov3_2.cfg weights/darknet53.conv.74 -gpus 0,1,2,3
      ```
@@ -253,3 +264,13 @@
   - F1 : 0
 
 ---
+
+## Darknet Train on Colab
+
+- (Origin Site)http://blog.ibanyez.info/blogs/coding/20190410-run-a-google-colab-notebook-to-train-yolov3-using-darknet-in/
+- (.ipynb)https://colab.research.google.com/drive/1lTGZsfMaGUpBG4inDIQwIJVW476ibXk_#scrollTo=LJZRcEw0LoBd
+
+1. GPU runtime 환경 설정
+   - Colab **> Menu > Runtime > Configure Runtime Type** And select **GPU** From the **Hardware accelerator** drop down meu
+   - 상단바 > 런타임 > 런타임 유형 변경 > 하드웨어 가속기 > GPU
+2. 
