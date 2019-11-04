@@ -78,7 +78,7 @@
   - YOLOv3의 학습 속도가 YOLOv3-tiny보다 10배 정도 더 많이 걸린다
   - 학습 환경이 좋지 않다면 Colab에서 학습하는 것이 좋다(mac book pro i5 8세대 + 16gb ram 기준 100배 빠르다)
   - gif 이미지는 없는것이 좋다 (없어야 되는것 같다)
-  - 검출하지 않으려는 객체들의 사진도 필요합니다. (이 사진들은 빈 txt 파일을 가져야 합니다.)
+  - **검출하지 않으려는 객체들의 사진도 필요합니다. (이 사진들은 빈 txt 파일을 가져야 합니다.)**
   - 클래스당 2000개 이상의 이미지가 필요합니다.
   - 이미지 속 객체들의 **크기, 밝기, 위치, 회전, 배경**이 다양할 수록 정확도가 높아집니다.
     - DarkNet에 기본적으로 Data Augmentation이 적용되어 있는것 같다
@@ -181,6 +181,9 @@
      weights/yolov3-tiny.conv.15
      ./darknet detector train coco/atv_rider_obj_4.data coco/yolov3_2.cfg weights/darknet53.conv.74 -gpus 0,1
      ./darknet detector train coco/atv_rider_obj_4.data coco/yolov3_2.cfg weights/darknet53.conv.74 -gpus 0,1,2,3
+     
+     # 이전 학습결과에 이어서 학습하기
+     !./darknet detector train "/content/gdrive/My Drive/darknet/obj.data" "/content/gdrive/My Drive/darknet/cfg/yolov3.cfg" "/content/gdrive/My Drive/darknet/weights/yolov3_2400.weights" -dont_show 
      ```
 
      - YOLOv3-tiny : weight=yolov3-tiny.conv.15, cfg=yolov3-tiny-obj.cfg
@@ -193,6 +196,9 @@
      # Darknet
      ./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg
      ./darknet detector test cfg/coco.data cfg/yolov3.cfg yolov3.weights data/dog.jpg
+     ./darknet detector test test/obj.data test/yolov3.cfg test/yolov3_1500.weights test/atv/1.jpeg
+     # 실행하면 /darknet/perdiction.jpg 파일이 생성된다
+     
      ```
 
      - https://github.com/ultralytics/yolov3#inference
@@ -274,3 +280,4 @@
    - Colab **> Menu > Runtime > Configure Runtime Type** And select **GPU** From the **Hardware accelerator** drop down meu
    - 상단바 > 런타임 > 런타임 유형 변경 > 하드웨어 가속기 > GPU
 2. 
+
