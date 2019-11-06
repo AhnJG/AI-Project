@@ -7,3 +7,4 @@
    - Colab **> Menu > Runtime > Configure Runtime Type** And select **GPU** From the **Hardware accelerator** drop down meu
    - 상단바 > 런타임 > 런타임 유형 변경 > 하드웨어 가속기 > GPU
 2. 
+
