@@ -2,6 +2,7 @@
 /Object_Detection/coco/
 /Object_Detection/YOLO-V3-Train/weights/
 /Object_Detection/darknet/
+/Efficientnet/cart_img/
 *.jpg
 *.gif
 *.jpeg
